@@ -10,6 +10,8 @@ app.use(express.json());
 
 app.use('/emp', itemsRouter);
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api-docs', swaggerUi.serve);
+app.get('/api-docs', swaggerUi.setup(swaggerSpec));
+app.get('/api-docs/', swaggerUi.setup(swaggerSpec));
 
 module.exports = app;
